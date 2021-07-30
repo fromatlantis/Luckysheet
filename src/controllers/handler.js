@@ -1567,7 +1567,7 @@ export default function luckysheetHandler() {
 	        }
 	  
 	        let sheetFile = sheetmanage.getSheetByIndex();
-	  
+            console.log('cellDragStop',row_index)
 	        let luckysheetTableContent = $("#luckysheetTableContent").get(0).getContext("2d");
 	        method.createHookFunction("cellDragStop", Store.flowdata[row_index][col_index], {
 	            r: row_index,
