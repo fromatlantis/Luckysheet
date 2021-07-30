@@ -1497,7 +1497,7 @@ export default function luckysheetHandler() {
      * @param {DragEvent} event 
      */
     function handleCellDragOverEvent(event) {
-        if (luckysheetConfigsetting && luckysheetConfigsetting.hook && luckysheetConfigsetting.hook.cellDragStop) {
+        if (luckysheetConfigsetting && luckysheetConfigsetting.hook && luckysheetConfigsetting.hook.cellDragOver) {
             let mouse = mouseposition(event.pageX, event.pageY);
             let x = mouse[0] + $("#luckysheet-cell-main").scrollLeft();
             let y = mouse[1] + $("#luckysheet-cell-main").scrollTop();
@@ -1523,7 +1523,7 @@ export default function luckysheetHandler() {
             }
         
             let sheetFile = sheetmanage.getSheetByIndex();
-        
+            console.log(row_index)
             let luckysheetTableContent = $("#luckysheetTableContent").get(0).getContext("2d");
             method.createHookFunction("cellDragOver", Store.flowdata[row_index][col_index], {
                 r: row_index,
