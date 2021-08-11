@@ -1489,7 +1489,7 @@ export default function luckysheetHandler() {
     document.getElementById('luckysheet-cell-main').addEventListener('dragover', function(e){
         e.preventDefault();
         e.stopPropagation();
-        handleCellDragOverEvent(e)
+        handleCellDragOverEvent(e);
     }, false);
 
     /**
@@ -1523,16 +1523,19 @@ export default function luckysheetHandler() {
             }
         
             let sheetFile = sheetmanage.getSheetByIndex();
-            console.log(row_index)
+            // console.log(row_index, col_index)
+            // console.log( Store.flowdata[row_index][col_index])
             let luckysheetTableContent = $("#luckysheetTableContent").get(0).getContext("2d");
-            method.createHookFunction("cellDragOver", Store.flowdata[row_index][col_index], {
-                r: row_index,
-                c: col_index,
-                "start_r": row_pre,
-                "start_c": col_pre,
-                "end_r": row,
-                "end_c": col
-            }, sheetFile, luckysheetTableContent, event);
+            if(Store.flowdata && Store.flowdata[row_index]){
+                method.createHookFunction("cellDragOver", Store.flowdata[row_index][col_index], {
+                    r: row_index,
+                    c: col_index,
+                    "start_r": row_pre,
+                    "start_c": col_pre,
+                    "end_r": row,
+                    "end_c": col
+                }, sheetFile, luckysheetTableContent, event);
+            }
         }
     }
 
@@ -1567,7 +1570,7 @@ export default function luckysheetHandler() {
 	        }
 	  
 	        let sheetFile = sheetmanage.getSheetByIndex();
-            console.log('cellDragStop',row_index)
+            // console.log('cellDragStop',row_index)
 	        let luckysheetTableContent = $("#luckysheetTableContent").get(0).getContext("2d");
 	        method.createHookFunction("cellDragStop", Store.flowdata[row_index][col_index], {
 	            r: row_index,
