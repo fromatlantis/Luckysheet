@@ -2081,12 +2081,12 @@ export function rowColumnOperationInitial(){
                     }
                 }
             }
-
             jfrefreshgrid(d, Store.luckysheet_select_save);
 
             // 清空编辑框的内容
             // 备注：在functionInputHanddler方法中会把该标签的内容拷贝到 #luckysheet-functionbox-cell
             $("#luckysheet-rich-text-editor").html("");
+            method.createHookFunction("rangeClearAfter", Store.luckysheet_select_save);
         }
     });
 
