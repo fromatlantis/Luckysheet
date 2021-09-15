@@ -2,6 +2,7 @@ import { selectHightlightShow, selectionCopyShow } from './select';
 import menuButton from './menuButton';
 import conditionformat from './conditionformat';
 import {checkProtectionLockedRangeList} from './protection';
+import method from '../global/method';
 import editor from '../global/editor';
 import tooltip from '../global/tooltip';
 import formula from '../global/formula';
@@ -877,6 +878,10 @@ const selection = {
                 jfrefreshgrid(d, Store.luckysheet_select_save);
                 selectHightlightShow();
             }
+        }
+        // hook
+        if(!method.createHookFunction('rangePasteAfter',Store.luckysheet_select_save, data)){
+            return;
         }
     },
     pasteHandlerOfCutPaste: function(copyRange){
