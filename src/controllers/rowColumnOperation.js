@@ -2063,6 +2063,7 @@ export function rowColumnOperationInitial(){
                         if(getObjType(d[r][c]) == "object"){
                             delete d[r][c]["m"];
                             delete d[r][c]["v"];
+                            delete d[r][c]["dataConf"];
 
                             if(d[r][c]["f"] != null){
                                 delete d[r][c]["f"];
