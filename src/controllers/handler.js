@@ -5662,12 +5662,12 @@ export default function luckysheetHandler() {
                 }
                 //复制的是图片
                 else if(clipboardData.files.length == 1 && clipboardData.files[0].type.indexOf('image') > -1){
-                    let render = new FileReader();
-                    render.readAsDataURL(clipboardData.files[0]);
-                    render.onload = function(event){
-                        let src = event.target.result;
-                        imageCtrl.inserImg(src);
-                    }
+                    // let render = new FileReader();
+                    // render.readAsDataURL(clipboardData.files[0]);
+                    // render.onload = function(event){
+                    //     let src = event.target.result;
+                    //     imageCtrl.inserImg(src);
+                    // }
 
                     return;
                 }
