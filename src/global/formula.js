@@ -3325,10 +3325,10 @@ const luckysheetformula = {
         }
     },
     functionInputHanddler: function ($to, $input, kcode) {
+        return;
         if (isEditMode()) {//此模式下禁用公式栏
             return;
         }
-
         let _this = this;
 
         let $copy = $to,
@@ -3336,6 +3336,7 @@ const luckysheetformula = {
         let value1 = $editer.html(),
             value1txt = $editer.text();
         let xssDeal = this.xssDeal
+
         setTimeout(function() {
             let value = $editer.text(),
                 valuetxt = value;
@@ -3417,6 +3418,7 @@ const luckysheetformula = {
         }, 1);
     },
     functionHTMLGenerate: function (txt) {
+        return txt;
         let _this = this;
 
         if (txt.length == 0 || txt.substr(0, 1) != "=") {
