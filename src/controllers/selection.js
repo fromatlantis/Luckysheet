@@ -1776,6 +1776,7 @@ const selection = {
 
                         if(value != null){
                             delete value["v"];
+                            delete value["dataConf"];
                             delete value["m"];
                             delete value["f"];
                             delete value["spl"];
