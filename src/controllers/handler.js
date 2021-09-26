@@ -5419,8 +5419,7 @@ export default function luckysheetHandler() {
             }
 
             const locale_fontjson = locale().fontjson;
-
-            
+            let type;
             // hook
             if(!method.createHookFunction('rangePasteBefore',Store.luckysheet_select_save,txtdata)){
                 return;
@@ -5439,6 +5438,7 @@ export default function luckysheetHandler() {
             }
             else if(txtdata.indexOf("luckysheet_copy_action_image") > - 1){
                 imageCtrl.pasteImgItem();
+                type='image';
             }
             else {
                 if (txtdata.indexOf("table") > -1) {
@@ -5674,6 +5674,7 @@ export default function luckysheetHandler() {
                 else {
                     txtdata = clipboardData.getData("text/plain");
                     selection.pasteHandler(txtdata);
+                    type='other';
                 }
             }
         }
@@ -5689,6 +5690,10 @@ export default function luckysheetHandler() {
             let text =  clipboardData.getData('text/plain');
             // 插入
             document.execCommand("insertText", false, text);
+        }
+        // hook
+        if(!method.createHookFunction('rangePasteAfter',Store.luckysheet_select_save, txtdata, type)){
+            return;
         }
     });
 

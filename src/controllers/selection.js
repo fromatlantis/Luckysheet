@@ -879,10 +879,6 @@ const selection = {
                 selectHightlightShow();
             }
         }
-        // hook
-        if(!method.createHookFunction('rangePasteAfter',Store.luckysheet_select_save, data)){
-            return;
-        }
     },
     pasteHandlerOfCutPaste: function(copyRange){
         if(!checkProtectionLockedRangeList(Store.luckysheet_select_save, Store.currentSheetIndex)){
