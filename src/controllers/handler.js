@@ -5419,7 +5419,6 @@ export default function luckysheetHandler() {
             }
 
             const locale_fontjson = locale().fontjson;
-            let type;
             // hook
             if(!method.createHookFunction('rangePasteBefore',Store.luckysheet_select_save,txtdata)){
                 return;
@@ -5435,10 +5434,13 @@ export default function luckysheetHandler() {
                 else {
                     selection.pasteHandlerOfCopyPaste(Store.luckysheet_copy_save);
                 }
+                // hook
+                if(!method.createHookFunction('rangePasteAfter',Store.luckysheet_select_save, txtdata)){
+                    return;
+                }
             }
             else if(txtdata.indexOf("luckysheet_copy_action_image") > - 1){
                 imageCtrl.pasteImgItem();
-                type='image';
             }
             else {
                 if (txtdata.indexOf("table") > -1) {
@@ -5668,18 +5670,12 @@ export default function luckysheetHandler() {
                         let src = event.target.result;
                         imageCtrl.inserImg(src);
                     }
-
                     return;
                 }
                 else {
                     txtdata = clipboardData.getData("text/plain");
                     selection.pasteHandler(txtdata);
-                    type='other';
                 }
-            }
-            // hook
-            if(!method.createHookFunction('rangePasteAfter',Store.luckysheet_select_save, txtdata, type)){
-                return;
             }
         }
         else if($(e.target).closest('#luckysheet-rich-text-editor').length > 0) {
