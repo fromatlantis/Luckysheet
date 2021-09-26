@@ -5677,6 +5677,10 @@ export default function luckysheetHandler() {
                     type='other';
                 }
             }
+            // hook
+            if(!method.createHookFunction('rangePasteAfter',Store.luckysheet_select_save, txtdata, type)){
+                return;
+            }
         }
         else if($(e.target).closest('#luckysheet-rich-text-editor').length > 0) {
             
@@ -5690,10 +5694,6 @@ export default function luckysheetHandler() {
             let text =  clipboardData.getData('text/plain');
             // 插入
             document.execCommand("insertText", false, text);
-        }
-        // hook
-        if(!method.createHookFunction('rangePasteAfter',Store.luckysheet_select_save, txtdata, type)){
-            return;
         }
     });
 
