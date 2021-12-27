@@ -3162,15 +3162,14 @@ const menuButton = {
 
                 for(let r = r1; r <= r2; r++){
                     for(let c = c1; c <= c2; c++){
-                        let cell = d[r][c];
-                        debugger
+                        let cell = d[r][c];             
                         if(cell != null && cell.mc != null){
                             let mc_r = cell.mc.r, mc_c = cell.mc.c;
 
                             if("rs" in cell.mc){
                                 delete cell.mc;
                                 delete cfg["merge"][mc_r + "_" + mc_c];
-
+                                
                                 fv[mc_r + "_" + mc_c] = $.extend(true, {}, cell);
                             }
                             else{
@@ -3245,6 +3244,7 @@ const menuButton = {
                                     delete cell_clone.ct;
                                     delete cell_clone.f;
                                     delete cell_clone.spl;
+                                    delete cell_clone.dataConf;
 
                                     d[r][c] = cell_clone;
                                 }
