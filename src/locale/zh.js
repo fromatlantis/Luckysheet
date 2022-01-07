@@ -9486,7 +9486,7 @@ export default {
         default:"冻结首行",
         freezenRow:"冻结首行",
         freezenColumn:"冻结首列",
-        freezenRC:"冻结行列",
+        freezenRC:"冻结首行首列",
         freezenRowRange:"冻结行到选区",
         freezenColumnRange:"冻结列到选区",
         freezenRCRange:"冻结行列到选区",
