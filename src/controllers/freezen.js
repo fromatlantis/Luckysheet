@@ -450,8 +450,7 @@ const luckysheetFreezen = {
                 freezen_horizon_ed = _this.freezenhorizontaldata[1];
                 freezen_horizon_scrollTop = _this.freezenhorizontaldata[2];
                 _this.saveFrozen('freezenRowRange', null, {
-                    row_focus: freezen_horizon_ed - 1,
-                    column_focus: 0
+                    row_focus: freezen_horizon_ed - 1
                 })
                 _this.createCanvas("freezen_h", drawWidth, freezen_horizon_px - freezen_horizon_scrollTop + 1, Store.rowHeaderWidth - 1, Store.columnHeaderHeight - 1);
             }
@@ -461,8 +460,7 @@ const luckysheetFreezen = {
                 freezen_vertical_ed = _this.freezenverticaldata[1];
                 freezen_vertical_scrollTop = _this.freezenverticaldata[2];
                 _this.saveFrozen('freezenColumnRange', null, {
-                    column_focus: freezen_vertical_ed -1,
-                    row_focus: 0
+                    column_focus: freezen_vertical_ed -1
                 })
                 _this.createCanvas("freezen_v", freezen_vertical_px - freezen_vertical_scrollTop, drawHeight, Store.rowHeaderWidth - 1, Store.columnHeaderHeight - 1);
             }
