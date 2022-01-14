@@ -424,7 +424,6 @@ const luckysheetFreezen = {
             let freezen_vertical_px, freezen_vertical_ed, freezen_vertical_scrollTop;
             let drawWidth = Store.luckysheetTableContentHW[0], 
                 drawHeight = Store.luckysheetTableContentHW[1];
-
             //双向freezen
             if (_this.freezenverticaldata != null && _this.freezenhorizontaldata != null) {
                 freezen_horizon_px = _this.freezenhorizontaldata[0];
@@ -434,7 +433,10 @@ const luckysheetFreezen = {
                 freezen_vertical_px = _this.freezenverticaldata[0];
                 freezen_vertical_ed = _this.freezenverticaldata[1];
                 freezen_vertical_scrollTop = _this.freezenverticaldata[2];
-
+                _this.saveFrozen('freezenRCRange', null, {
+                    row_focus: freezen_horizon_ed,
+                    column_focus: freezen_vertical_ed
+                })
                 //3
                 _this.createCanvas("freezen_3", freezen_vertical_px - freezen_vertical_scrollTop, freezen_horizon_px - freezen_horizon_scrollTop + 1, Store.rowHeaderWidth - 1, Store.columnHeaderHeight - 1);
                 //4
@@ -447,7 +449,10 @@ const luckysheetFreezen = {
                 freezen_horizon_px = _this.freezenhorizontaldata[0];
                 freezen_horizon_ed = _this.freezenhorizontaldata[1];
                 freezen_horizon_scrollTop = _this.freezenhorizontaldata[2];
-
+                _this.saveFrozen('freezenRowRange', null, {
+                    row_focus: freezen_horizon_ed,
+                    column_focus: 0
+                })
                 _this.createCanvas("freezen_h", drawWidth, freezen_horizon_px - freezen_horizon_scrollTop + 1, Store.rowHeaderWidth - 1, Store.columnHeaderHeight - 1);
             }
             //垂直freezen
@@ -455,7 +460,10 @@ const luckysheetFreezen = {
                 freezen_vertical_px = _this.freezenverticaldata[0];
                 freezen_vertical_ed = _this.freezenverticaldata[1];
                 freezen_vertical_scrollTop = _this.freezenverticaldata[2];
-
+                _this.saveFrozen('freezenColumnRange', null, {
+                    column_focus: freezen_vertical_ed,
+                    row_focus: 0
+                })
                 _this.createCanvas("freezen_v", freezen_vertical_px - freezen_vertical_scrollTop, drawHeight, Store.rowHeaderWidth - 1, Store.columnHeaderHeight - 1);
             }
 
@@ -1648,7 +1656,7 @@ const luckysheetFreezen = {
                 type: 'cancel'
             }
         }
-
+        console.log(frozen[operate])
         // store frozen
         Store.luckysheetfile[order]["frozen"] = frozen[operate];
     },

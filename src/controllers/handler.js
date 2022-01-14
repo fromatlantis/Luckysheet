@@ -4989,8 +4989,6 @@ export default function luckysheetHandler() {
     $("#luckysheet-freezen-btn-horizontal").click(function () {
         if ($.trim($(this).text()) == locale().freezen.freezenCancel) {
 
-            luckysheetFreezen.saveFrozen("freezenCancel");
-
             if (luckysheetFreezen.freezenverticaldata != null) {
                 luckysheetFreezen.cancelFreezenVertical();
                 luckysheetFreezen.createAssistCanvas();
@@ -5004,6 +5002,8 @@ export default function luckysheetHandler() {
             }
 
             luckysheetFreezen.scrollAdapt();
+
+            luckysheetFreezen.saveFrozen("freezenCancel");
         }
         else {
 
@@ -5025,10 +5025,10 @@ export default function luckysheetHandler() {
     $("#luckysheet-freezen-btn-vertical").click(function () {
         if (luckysheetFreezen.freezenverticaldata != null) {
 
-            luckysheetFreezen.saveFrozen("freezenCancel");
-
             luckysheetFreezen.cancelFreezenVertical();
             luckysheetrefreshgrid();
+
+            luckysheetFreezen.saveFrozen("freezenCancel");
         }
         else {
 
