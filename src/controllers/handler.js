@@ -1752,7 +1752,7 @@ export default function luckysheetHandler() {
 
             $("#luckysheet-freezebar-vertical").find(".luckysheet-freezebar-vertical-drop").css({ "left": left });
             luckysheetFreezen.saveFreezen(null, null, luckysheetFreezen.freezenverticaldata, left);
-            luckysheetsizeauto();//调节选区时下部单元格溢出
+            // luckysheetsizeauto();//调节选区时下部单元格溢出
         }
         else if (!!pivotTable && pivotTable.movestate) {
             let x = event.pageX, y = event.pageY;
