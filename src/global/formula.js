@@ -1299,12 +1299,14 @@ const luckysheetformula = {
 
             curv.ct.t = "inlineStr";
             curv.ct.s = convertSpanToShareString($input.find("span"));
+            curv.v = convertSpanToShareString($input.find("span"));
             if(isCopyVal) {
                 curv.ct.s = [
                     {
                     v: inputText,
                     }
                 ];
+                curv.v = inputText
             }
         }
 
