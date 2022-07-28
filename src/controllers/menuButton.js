@@ -686,7 +686,7 @@ const menuButton = {
             let d = editor.deepCopyFlowData(Store.flowdata);
             let color =  $(this).attr("color");
             if(color == null){
-                color = "#ffffff";
+                color = "#f7f8f9";
             }
             _this.updateFormat(d, "bg", color);
         });
@@ -731,7 +731,7 @@ const menuButton = {
                     noColorSelectedText: locale_toolbar.noColorSelectedText,
                     localStorageKey: "spectrum.bgcolor" + server.gridKey,
                     palette: [
-                        ["#000", "#444", "#666", "#999", "#ccc", "#eee", "#f3f3f3", "#fff"],
+                        ["#000", "#444", "#666", "#999", "#ccc", "#eee", "#f7f8f9", "#fff"],
                         ["#f00", "#f90", "#ff0", "#0f0", "#0ff", "#00f", "#90f", "#f0f"],
                         ["#f4cccc", "#fce5cd", "#fff2cc", "#d9ead3", "#d0e0e3", "#cfe2f3", "#d9d2e9", "#ead1dc"],
                         ["#ea9999", "#f9cb9c", "#ffe599", "#b6d7a8", "#a2c4c9", "#9fc5e8", "#b4a7d6", "#d5a6bd"],
@@ -746,7 +746,7 @@ const menuButton = {
                             color = color.toHexString();
                         }
                         else {
-                            color = "#fff";
+                            color = "#f7f8f9";
                         }
 
                         let oldcolor = null;
@@ -768,10 +768,10 @@ const menuButton = {
                     luckysheetContainerFocus();
 
                     let $input = $("#" + menuButtonId).find(".luckysheet-color-selected");
-                    $input.val("#ffffff");
+                    $input.val("#f7f8f9");
                     $("#luckysheet-icon-cell-color").attr("color", null);
-                    $input.spectrum("set", "#ffffff");
-                    $("#luckysheet-icon-cell-color .luckysheet-color-menu-button-indicator").css("border-bottom-color", "#ffffff");
+                    $input.spectrum("set", "#f7f8f9");
+                    $("#luckysheet-icon-cell-color .luckysheet-color-menu-button-indicator").css("border-bottom-color", "#f7f8f9");
                     
                     let d = editor.deepCopyFlowData(Store.flowdata);
                     _this.updateFormat(d, "bg", null);
@@ -804,7 +804,7 @@ const menuButton = {
                     alternateformat.perfect();
                 });
 
-                $("#" + menuButtonId).find(".luckysheet-color-selected").val("#fff");
+                $("#" + menuButtonId).find(".luckysheet-color-selected").val("#f7f8f9");
             }
 
             let userlen = $(this).outerWidth();
@@ -944,7 +944,7 @@ const menuButton = {
             let style = $("#luckysheetborderSizepreview").attr("itemvalue");
 
             if(color == null || color == ""){
-                color = "#000";
+                color = "#ccc";
             }
 
             if(style == null || style == ""){
@@ -1171,7 +1171,7 @@ const menuButton = {
                     showSelectionPalette: true,
                     maxPaletteSize: 8,
                     maxSelectionSize: 8,
-                    color: "#000",
+                    color: "#ccc",
                     cancelText: locale_button.cancel,
                     chooseText: locale_button.confirm,
                     togglePaletteMoreText: locale_toolbar.customColor,
@@ -1196,7 +1196,7 @@ const menuButton = {
                             color = color.toHexString();
                         }
                         else {
-                            color = "#000";
+                            color = "#ccc";
                         }
 
                         let oldcolor = null;
@@ -1207,10 +1207,10 @@ const menuButton = {
 
                 $("#"+ subcolormenuid).find(".luckysheet-color-reset").click(function(){
                     let $input = $("#"+ subcolormenuid).find(".luckysheet-color-selected");
-                    $input.val("#000");
+                    $input.val("#ccc");
                     $("#luckysheet-icon-cell-color").attr("color", null);
-                    $input.spectrum("set", "#000");
-                    $("#luckysheet-icon-borderColor-linecolor").css("border-bottom-color", "#000");
+                    $input.spectrum("set", "#ccc");
+                    $("#luckysheet-icon-borderColor-linecolor").css("border-bottom-color", "#ccc");
                 });
             }
 
