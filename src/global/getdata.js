@@ -521,12 +521,12 @@ export function checkstatusByCell(cell, a){
     }
     else if(a == "fs"){
         if(foucsStatus == null){
-            foucsStatus = "10";
+            foucsStatus = "9";
         }
         else{
             foucsStatus = foucsStatus[a];
             if(foucsStatus == null){
-                foucsStatus = "10";
+                foucsStatus = "9";
             }
         }
     }
