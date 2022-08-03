@@ -867,7 +867,7 @@ const menuButton = {
 
                 $("body").append(menu);
                 $menuButton = $("#" + menuButtonId).width(150);
-                _this.focus($menuButton, 10);
+                _this.focus($menuButton, 9);
 
                 $menuButton.find(".luckysheet-cols-menuitem").click(function(){
                     $menuButton.hide();
@@ -890,7 +890,7 @@ const menuButton = {
 
             let defualtvalue = $("#luckysheet-icon-font-size").attr("itemvalue");
             if(defualtvalue == null){
-                defualtvalue = 10;
+                defualtvalue = 9;
             }
             _this.focus($menuButton, defualtvalue);
 
