@@ -145,7 +145,7 @@
 							// console.info(data,sheetFile,ctx)
 						},
 						updated:function(operate){
-							// console.info(operate)
+							console.info(operate)
 						},
 						cellUpdateBefore:function(r,c,value,isRefresh){
 							console.log(value)
@@ -1903,6 +1903,7 @@
 					title: 'test',
 					onClick: function (clickEvent, event, params) {
 						console.log('function test click', clickEvent, event, params)
+						// console.log(luckysheet.getRangeWithFlatten())
 					}
 				}]
 			}

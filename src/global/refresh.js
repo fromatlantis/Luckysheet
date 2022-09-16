@@ -36,7 +36,7 @@ function runExecFunction(range, index, data){
     formula.execFunctionGlobalData = null;
 }
 
-function jfrefreshgrid(data, range, allParam, isRunExecFunction = true, isRefreshCanvas = true) {
+function jfrefreshgrid(data, range, allParam, isRunExecFunction = true, isRefreshCanvas = true, type = "datachange") {
     if(data == null){
         data = Store.flowdata;
     }
@@ -97,7 +97,7 @@ function jfrefreshgrid(data, range, allParam, isRunExecFunction = true, isRefres
         }
         
         Store.jfredo.push({ 
-            "type": "datachange", 
+            "type": type, 
             "data": Store.flowdata, 
             "curdata": data,
             "sheetIndex": Store.currentSheetIndex, 

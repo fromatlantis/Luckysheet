@@ -880,7 +880,7 @@ const luckysheetDropCell = {
             "cdformat": cdformat,
             "dataVerification": dataVerification
         }
-        jfrefreshgrid(d, Store.luckysheet_select_save, allParam);
+        jfrefreshgrid(d, Store.luckysheet_select_save, allParam, true, true, "dropCell");
 
         selectHightlightShow();
     },
