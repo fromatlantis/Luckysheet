@@ -4448,7 +4448,7 @@ const menuButton = {
         return style;
     },
     fontSelectList:[],
-    defualtFont:["微软雅黑","宋体","黑体","楷体","仿宋","新宋体","华文新魏","华文行楷","华文隶书","Times New Roman","Arial","Tahoma","Verdana"],
+    defualtFont:["微软雅黑","宋体","黑体","楷体","仿宋","新宋体","华文新魏","华文行楷","华文隶书","Times New Roman","Arial","Tahoma","Verdana","京东朗正体","京东正黑体"],
     addFontTolist:function(fontName) {
         fontName = fontName.replace(/"/g, "").replace(/'/g, "");
         let isNone = true;
