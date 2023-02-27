@@ -3270,7 +3270,7 @@ const menuButton = {
                             for(let c = c1; c <= c2; c++){
                                 let cell = d[r][c];
 
-                                if(cell != null && (!isRealNull(cell.v) || cell.f != null) && !isfirst){
+                                if(cell != null && (!isRealNull(cell.v) || cell.f != null || !!cell.dataConf) && !isfirst){
                                     fv = $.extend(true, {}, cell);
                                     isfirst = true;
                                 }
@@ -3291,7 +3291,7 @@ const menuButton = {
                             for(let r = r1; r <= r2; r++){
                                 let cell = d[r][c];
 
-                                if(cell != null && (!isRealNull(cell.v) || cell.f != null) && !isfirst){
+                                if(cell != null && (!isRealNull(cell.v) || cell.f != null || !!cell.dataConf) && !isfirst){
                                     fv = $.extend(true, {}, cell);
                                     isfirst = true;
                                 }
@@ -3312,7 +3312,7 @@ const menuButton = {
                             for(let c = c1; c <= c2; c++){
                                 let cell = d[r][c];
 
-                                if(cell != null && (!isRealNull(cell.v) || cell.f != null) && !isfirst){
+                                if(cell != null && (!isRealNull(cell.v) || cell.f != null || !!cell.dataConf) && !isfirst){
                                     fv = $.extend(true, {}, cell);
                                     isfirst = true;
                                 }
